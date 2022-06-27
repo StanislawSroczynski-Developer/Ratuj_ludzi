@@ -41,6 +41,23 @@
                 <Ellipse Height="10" Stroke="White" Width="10" Fill="White"/>
                 <Rectangle Height="25" Stroke="White" Width="10" Fill="White"/>
             </StackPanel>
+            <TextBlock x:Name="GameOverText" Canvas.Left="496" TextWrapping="Wrap" Canvas.Top="177" FontFamily="Arial Black" FontSize="100" FontWeight="Bold" FontStyle="Italic"><Run Language="pl-pl" Text="Koniec Gry"/><LineBreak/><Run Language="pl-pl"/></TextBlock>
+            <Rectangle x:Name="target" Height="50" Canvas.Left="1039" Stroke="Black" Canvas.Top="108" Width="50" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
         </Canvas>
     </Grid>
 </Window>
