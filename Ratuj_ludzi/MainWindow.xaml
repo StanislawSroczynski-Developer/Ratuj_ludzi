@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:Ratuj_ludzi"
         mc:Ignorable="d"
         Title="Ratuj ludzi" Height="900" Width="1600">
+    <Window.Resources>
+        <ControlTemplate x:Key="EnemyTemplate" TargetType="{x:Type ContentControl}">
+            <Grid>
+                <Ellipse Height="98" Stroke="Black" Width="100" Fill="Red"/>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160"/>
@@ -18,9 +25,9 @@
             <RowDefinition Height="160"/>
         </Grid.RowDefinitions>
         <Button x:Name="startButton" Content="Start!" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="Button_Click" Height="44" Width="71"/>
-        <StackPanel Grid.Column="1" Orientation="Vertical" Grid.Row="1" Grid.ColumnSpan="2" Margin="1200,530,80,54" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Column="2" Orientation="Vertical" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="98" Width="100">
             <TextBlock Text="Ich  Unikaj" TextWrapping="Wrap" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <ContentControl Content="ContentControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ContentControl Template="{DynamicResource EnemyTemplate}" Content="ContentControl" Height="100"/>
         </StackPanel>
         <ProgressBar Grid.Column="1" Grid.Row="2" Height="20"/>
         <Canvas x:Name="playArea" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3">
@@ -30,6 +37,10 @@
                     <GradientStop Color="#FFFE68FF" Offset="0"/>
                 </LinearGradientBrush>
             </Canvas.Background>
+            <StackPanel x:Name="human" HorizontalAlignment="Center" Canvas.Left="0" Orientation="Vertical" Canvas.Top="0" VerticalAlignment="Top">
+                <Ellipse Height="10" Stroke="White" Width="10" Fill="White"/>
+                <Rectangle Height="25" Stroke="White" Width="10" Fill="White"/>
+            </StackPanel>
         </Canvas>
     </Grid>
 </Window>
